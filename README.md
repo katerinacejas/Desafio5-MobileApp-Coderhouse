@@ -8,6 +8,6 @@ Agregar la navegación de tabs:
 - Configurar e integrar redux.
 - Manejo del estado de la aplicación.
 
-## Consigna: 
+## Sugerencias: 
 - Puedes utilizar otros tab navigators de React Navigation para explorar alternativas visuales.
 - Adapta las acciones a las que ya existen en tu aplicación.
