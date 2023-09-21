@@ -1,5 +1,5 @@
 {
-  "name": "navegacion_rutas_header",
+  "name": "tab_navigation_redux",
   "version": "1.0.0",
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
