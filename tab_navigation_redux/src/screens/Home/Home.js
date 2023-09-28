@@ -2,11 +2,9 @@ import React from 'react'
 import { Image, Text, View, FlatList, TouchableOpacity } from 'react-native'
 import styles from './Home.style'
 import data from '../../data/ekos'
-import { usarContexto } from '../../features/ManejarSesion';
+import { useDispatch, useSelector } from 'react-redux'
 
 const Home = () => {
-    //const { setLoginHecho } = route.params
-    const setLoginHecho = usarContexto();
 
     const renderEkos = ({ item }) => (
         <View style={styles.container}>
@@ -27,9 +25,14 @@ const Home = () => {
         </View>
     )
 
-    const cerrarSesion = () => (
-        setLoginHecho(false)
-    )
+    const loginHecho = useSelector((state) => state.login.loginHecho);
+    const dispatch = useDispatch();
+
+    const cerrarSesion = () => {
+        console.log('Valor de loginHecho antes de actualizar:', loginHecho);
+        dispatch({ type: 'SET_LOGIN', payload: false });
+        console.log('Valor de loginHecho después de actualizar:', loginHecho);
+    }
 
     return (
         <>

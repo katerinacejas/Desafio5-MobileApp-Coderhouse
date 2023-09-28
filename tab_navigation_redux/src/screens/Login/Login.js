@@ -1,7 +1,7 @@
 import React, { useState , useRef } from 'react'
 import { Image, Text, View, TextInput, TouchableOpacity, StatusBar } from 'react-native'
 import styles from './Login.style'
-import { usarContexto } from '../../features/ManejarSesion';
+import { useDispatch, useSelector } from 'react-redux'
 
 const Login = () => {
     const [usuario, setUsuario] = useState('')
@@ -10,14 +10,15 @@ const Login = () => {
     const [contrasenia, setContrasenia] = useState('')
     const captarContrasenia = (unaContrasenia) => setContrasenia(unaContrasenia)
 
-    const {setLoginHecho}  = usarContexto();
-    const loginHecho = usarContexto();
-    
+    const loginHecho = useSelector((state) => state.login.loginHecho);
+    const dispatch = useDispatch();
+
     const iniciarSesion = () => {
         if (usuario === "" || contrasenia === "") {
             return
         }
-        setLoginHecho(true)
+        console.log('Valor de loginHecho antes de actualizar:', loginHecho);
+        dispatch({ type: 'SET_LOGIN', payload: true });
         console.log('Valor de loginHecho después de actualizar:', loginHecho);
         /*
             aca haria mas funcionalidad con el usuario para verificar q exista, 
