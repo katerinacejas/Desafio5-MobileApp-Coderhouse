@@ -45,13 +45,6 @@ const Home = ({ route }) => {
 
             {/* los botones de abajo */}
             <View style={styles.buttonContainer}>
-
-                {/* mi perfil */}
-                <TouchableOpacity style={styles.buttonMiPerfil} onPress={() => navigation.navigate('Perfil')}>
-                    <Text style={styles.buttonTextMiPerfil}> Mi Perfil </Text>
-                    <MaterialCommunityIcons name="human-greeting-variant" size={30} color="black" />
-                </TouchableOpacity>
-
                 {/* cerrar sesion */}
                 <TouchableOpacity style={styles.button}>
                     <Text

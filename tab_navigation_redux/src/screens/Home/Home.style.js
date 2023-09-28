@@ -63,27 +63,13 @@ export default styles = StyleSheet.create({
         marginBottom: 10,
         marginTop: 10,
     },
-    buttonMiPerfil: {
-        backgroundColor: colors.turquesa,
-        borderRadius: 30,
-        paddingVertical: 10,
-        paddingHorizontal: 20,
-        flexDirection: 'row',
-        alignItems: 'center',
-    },
-    buttonTextMiPerfil: {
-        color: colors.negro,
-        fontWeight: 'bold',
-        marginRight: 10,
-        fontSize: sizes.botones,
-        textAlign: 'center',
-    },
     button: {
         backgroundColor: colors.turquesa,
         borderRadius: 30,
         paddingVertical: 10,
         paddingHorizontal: 20,
         flexDirection: 'row',
+        alignSelf: 'center',
         alignItems: 'center',
     },
     buttonText: {
