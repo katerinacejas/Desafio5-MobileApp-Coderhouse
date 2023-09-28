@@ -7,13 +7,13 @@ const Stack = createNativeStackNavigator()
 const PerfilNavigator = () => {
     return (
         <Stack.Navigator
-            initialRouteName="Perfil"
+            initialRouteName="PerfilStack"
             screenOptions={() => ({
                 headerShown: false,
             })}
         >
             <Stack.Screen
-                name="Perfil"
+                name="PerfilStack"
                 component={Perfil}
                 options={{
                     title: 'Mi Perfil',

@@ -1,10 +1,10 @@
-import React, { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useState } from 'react';
 
 const Contexto = createContext();
 
 export const usarContexto = () => useContext(Contexto);
 
-export const cerrarSesion = ({ children }) => {
+export const ManejarSesion = ({ children }) => {
     const [loginHecho, setLoginHecho] = useState('')
 
     return (

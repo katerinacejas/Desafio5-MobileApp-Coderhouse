@@ -2,12 +2,11 @@ import React from 'react'
 import { Image, Text, View, FlatList, TouchableOpacity } from 'react-native'
 import styles from './Home.style'
 import data from '../../data/ekos'
-import { useNavigation } from '@react-navigation/native';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { usarContexto } from '../../features/ManejarSesion';
 
-const Home = ({ route }) => {
-    const { setLoginHecho } = route.params
-    const navigation = useNavigation()
+const Home = () => {
+    //const { setLoginHecho } = route.params
+    const { setLoginHecho } = usarContexto();
 
     const renderEkos = ({ item }) => (
         <View style={styles.container}>

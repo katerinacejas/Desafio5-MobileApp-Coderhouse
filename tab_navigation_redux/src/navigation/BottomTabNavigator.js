@@ -6,10 +6,14 @@ import { NavigationContainer } from '@react-navigation/native'
 import { StyleSheet } from 'react-native'
 import { FontAwesome } from '@expo/vector-icons'; 
 import { Ionicons } from '@expo/vector-icons'; 
+//import { usarContexto } from '../features/ManejarSesion';
 
 const BottomTab = createBottomTabNavigator()
 
-const BottomTabNavigator = ({ setLoginHecho }) => {
+const BottomTabNavigator = () => {
+
+    //const { setLoginHecho } = usarContexto();
+
     return (
         <NavigationContainer>
             <BottomTab.Navigator
@@ -24,7 +28,7 @@ const BottomTabNavigator = ({ setLoginHecho }) => {
                 <BottomTab.Screen
                     name="Home"
                     component={HomeNavigator}
-                    initialParams={{ setLoginHecho: setLoginHecho }}
+                    //initialParams={{ setLoginHecho: setLoginHecho }}
                     options={{
                         tabBarIcon: ({ focused }) => (<Ionicons name="home" size={30} color={focused ? colors.violeta : colors.fondoClaro} />),
                     }}

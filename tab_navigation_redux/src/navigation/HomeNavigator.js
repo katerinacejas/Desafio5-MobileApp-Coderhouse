@@ -8,13 +8,13 @@ const Stack = createNativeStackNavigator()
 const HomeNavigator = ({ setLoginHecho })  => {
     return (
         <Stack.Navigator
-            initialRouteName="Home"
+            initialRouteName="HomeStack"
             screenOptions={() => ({
                 headerShown: false,
             })}
         >
             <Stack.Screen
-                name="Home"
+                name="HomeStack"
                 component={Home}
                 initialParams={{ setLoginHecho: setLoginHecho }}
                 options={{
