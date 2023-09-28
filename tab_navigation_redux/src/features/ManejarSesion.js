@@ -5,7 +5,7 @@ const Contexto = createContext();
 export const usarContexto = () => useContext(Contexto);
 
 export const ManejarSesion = ({ children }) => {
-    const [loginHecho, setLoginHecho] = useState('')
+    const [loginHecho, setLoginHecho] = useState(null)
 
     return (
         <Contexto.Provider value={{ loginHecho, setLoginHecho }}>

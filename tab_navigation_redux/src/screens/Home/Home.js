@@ -6,7 +6,7 @@ import { usarContexto } from '../../features/ManejarSesion';
 
 const Home = () => {
     //const { setLoginHecho } = route.params
-    const { setLoginHecho } = usarContexto();
+    const setLoginHecho = usarContexto();
 
     const renderEkos = ({ item }) => (
         <View style={styles.container}>
