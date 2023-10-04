@@ -1,14 +1,22 @@
+import { createSlice } from '@reduxjs/toolkit'
+
 const initialState = {
     loginHecho: false,
 };
 
-const LoginReducer = (state = initialState, action) => {
-    switch (action.type) {
-        case 'SET_LOGIN':
-            return { ...state, loginHecho: action.payload };
-        default:
-            return state;
-    }
-};
+export const LoginReducer = createSlice({
+    name: 'login',
+    initialState,
+    reducers: {
+        iniciarSesion: (state) => {
+            state.loginHecho = true
+        },
+        cerrarSesion: (state) => {
+            state.loginHecho = false
+        },
+    },
+})
 
-export default LoginReducer;
+export const { iniciarSesion , cerrarSesion } = LoginReducer.actions
+
+export default LoginReducer.reducer

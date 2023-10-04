@@ -3,6 +3,7 @@ import { Image, Text, View, FlatList, TouchableOpacity } from 'react-native'
 import styles from './Home.style'
 import data from '../../data/ekos'
 import { useDispatch, useSelector } from 'react-redux'
+import { cerrarSesion } from '../../features/LoginReducer'
 
 const Home = () => {
 
@@ -25,13 +26,13 @@ const Home = () => {
         </View>
     )
 
-    const loginHecho = useSelector((state) => state.login.loginHecho);
+    const loginHecho = useSelector(state => state.login.loginHecho);
     const dispatch = useDispatch();
 
-    const cerrarSesion = () => {
-        console.log('Valor de loginHecho antes de actualizar:', loginHecho);
-        dispatch({ type: 'SET_LOGIN', payload: false });
-        console.log('Valor de loginHecho después de actualizar:', loginHecho);
+    const funcionCerrarSesion = () => {
+        console.log('Valor de loginHecho antes de cerrar sesion:', loginHecho);
+        dispatch(cerrarSesion())
+        console.log('Valor de loginHecho después de cerrar sesion:', loginHecho);
     }
 
     return (
@@ -51,7 +52,7 @@ const Home = () => {
                 <TouchableOpacity style={styles.button}>
                     <Text
                         style={styles.buttonText}
-                        onPress={cerrarSesion}>
+                        onPress={funcionCerrarSesion}>
                         Cerrar Sesión
                     </Text>
                 </TouchableOpacity>

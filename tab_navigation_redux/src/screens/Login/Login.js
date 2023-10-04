@@ -2,6 +2,7 @@ import React, { useState , useRef } from 'react'
 import { Image, Text, View, TextInput, TouchableOpacity, StatusBar } from 'react-native'
 import styles from './Login.style'
 import { useDispatch, useSelector } from 'react-redux'
+import { iniciarSesion } from '../../features/LoginReducer'
 
 const Login = () => {
     const [usuario, setUsuario] = useState('')
@@ -10,16 +11,16 @@ const Login = () => {
     const [contrasenia, setContrasenia] = useState('')
     const captarContrasenia = (unaContrasenia) => setContrasenia(unaContrasenia)
 
-    const loginHecho = useSelector((state) => state.login.loginHecho);
+    const loginHecho = useSelector(state => state.login.loginHecho);
     const dispatch = useDispatch();
 
-    const iniciarSesion = () => {
+    const funcionIniciarSesion = () => {
         if (usuario === "" || contrasenia === "") {
             return
         }
-        console.log('Valor de loginHecho antes de actualizar:', loginHecho);
-        dispatch({ type: 'SET_LOGIN', payload: true });
-        console.log('Valor de loginHecho después de actualizar:', loginHecho);
+        console.log('Valor de loginHecho antes de iniciar sesion:', loginHecho);
+        dispatch(iniciarSesion())
+        console.log('Valor de loginHecho después de iniciar sesion:', loginHecho);
         /*
             aca haria mas funcionalidad con el usuario para verificar q exista, 
             etcetcetc
@@ -55,7 +56,7 @@ const Login = () => {
             <TouchableOpacity style={styles.button}>
                 <Text 
                     style={styles.buttonText} 
-                    onPress={iniciarSesion}>
+                    onPress={funcionIniciarSesion}>
                     Iniciar Sesión
                 </Text>
             </TouchableOpacity>

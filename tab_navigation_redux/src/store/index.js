@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 import LoginReducer from '../features/LoginReducer'
-import { setupListeners } from '@reduxjs/toolkit/dist/query'
+//import { setupListeners } from '@reduxjs/toolkit/dist/query'
 
 const store = configureStore({
     reducer: {
@@ -8,6 +8,6 @@ const store = configureStore({
     },
 });
 
-setupListeners(store.dispatch)
+//setupListeners(store.dispatch)
 
 export default store
